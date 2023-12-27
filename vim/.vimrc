@@ -103,13 +103,13 @@ filetype plugin indent on         " required
 
 "////// GUI Setting
 if has("gui_running")             " :help feature-list
-    if has("gui_win32")
+    if (has("win32") || has("win64")) && has("gui_win32")
         au GUIEnter * simalt ~x   " start with a maximized window
         set guioptions -=m        " disable Menu bar
         set guioptions -=T        " disable Tool bar
         set guioptions -=r        " disable Right-hand scroll bar
         set guioptions -=L        " disable Left-hand scroll bar
-        set guifont=SauceCodePro\ NF:h9:W600:cANSI
+        set guifont=SauceCodePro\ NF:h9:W600:cANSI:qDRAFT
     endif
 endif
 
@@ -136,8 +136,8 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 "////// NERDTree Setting
 let NERDTreeShowHidden = 1
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
+let g:NERDTreeDirArrowExpandable = '■'
+let g:NERDTreeDirArrowCollapsible = '□'
 let g:NERDTreeChDirMode = 2
 map <F3> :NERDTreeMirror<CR>
 map <F3> :NERDTreeToggle<CR>
