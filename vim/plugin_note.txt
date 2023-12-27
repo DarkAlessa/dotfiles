@@ -1,0 +1,5 @@
+plugin ที่การทำงานซ้ำซ้อนกัน
+ใช้ ale แทน syntastic
+	เพราะ ale รองรับ Language Server Protocol (LSP)
+ใช้ vim-airline แทน powerline
+	เพราะ vim-airline ใช้ vim script 100% แต่ powerline ใช้ python

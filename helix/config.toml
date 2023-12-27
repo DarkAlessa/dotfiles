@@ -1,0 +1,15 @@
+# command :config-open for open config.toml location
+
+theme = "autumn"
+
+[keys.insert.j]
+j = "normal_mode" # Map 'jj' to exit insert mode
+
+[keys.normal."\\"]
+x = ":sh c++ -std=c++23 *.cpp -o app.exe -Wall -Werror -Wpedantic && .\\app.exe"
+b = ":sh cargo build"
+r = ":sh cargo run"
+c = ":sh cargo check"
+
+[editor]
+line-number = "relative"

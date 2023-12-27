@@ -1,0 +1,9 @@
+neovim ใช้ init.vim แทน .vimrc
+C:\Users\<user-name>\AppData\Local\nvim\init.vim
+
+plugin manager จะใช้ Plug โฟลเดอร์ติดตั้งจะอยู่ใน
+C:\Users\<user-name>\AppData\Local\nvim-data\plugged\
+
+
+//----------------------
+Plug : https://github.com/junegunn/vim-plug
