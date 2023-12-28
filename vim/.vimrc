@@ -143,19 +143,35 @@ g:NERDTreeChDirMode = 2
 map <F3> :NERDTreeMirror<CR>
 map <F3> :NERDTreeToggle<CR>
 
-### Change working dir when vim starts up
-#autocmd VimEnter * NERDTree C:\Users\name\WorkingDir
+### Start NERDTree and leave the cursor in it.
+#autocmd VimEnter * NERDTree
 
-### Open a NERDTree automatically when vim starts up if no files were specified
-autocmd StdinReadPre * let s:std_in = 1
+### Start NERDTree and put the cursor back in the other window.
+#autocmd VimEnter * NERDTree | wincmd p
+
+### Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
-### Open NERDTree automatically when vim starts up on opening a directory
-autocmd StdinReadPre * let s:std_in = 1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+### Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 
-### Close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
+### Start NERDTree, unless a file or session is specified, eg. vim -S session_file.vim.
+autocmd StdinReadPre * s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') && v:this_session == '' | NERDTree | endif
+
+### Start NERDTree when Vim starts with a directory argument.
+autocmd StdinReadPre * s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+    \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+
+### Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+### Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
 
 ####### ALE
 g:ale_sign_error = ''
