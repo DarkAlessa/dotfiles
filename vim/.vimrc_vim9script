@@ -45,17 +45,17 @@ set tags+=C:\msys64\home\nuker\tags # Ctags file / see ft-c-omni for help
 set omnifunc=syntaxcomplete#Complete
 #set shell=C:\Program\ Files\PowerShell\7\pwsh.exe
 
-#////// Terminal Debugger
+####### Terminal Debugger
 g:termdebug_wide = 110
 g:termdebug_popup = 0
 
-#////// Key mapping
+####### Key mapping
 imap jj <Esc>
 nmap <F8> :TagbarToggle<CR>
 nnoremap <Leader>c :!clear && g++ -std=c++23 -Wall -Werror -Wpedantic *.cpp -o app && app.exe <CR>
 nnoremap <Leader>b :!clear && cmake --build ./build <CR>
 
-#////// Move the line
+####### Move the line
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <ESC> :m .+1<CR>==gi
@@ -63,7 +63,7 @@ inoremap <A-K> <ESC> :m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
-#////// Vim-plug
+####### Vim-plug
 call plug#begin()                 # required
 # The default plugin directory will be as follows:
 #   - Vim (Linux/macOS): '~/.vim/plugged'
@@ -86,11 +86,11 @@ Plug 'ctrlpvim/ctrlp.vim'         # Full path fuzzy file, buffer, mru, tag, ... 
 Plug 'rust-lang/rust.vim'         # syntax highlighting of Rust
 Plug 'mesonbuild/meson'           # meson build system
 
-#////// fzf
+####### fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'           # A command-line fuzzy finder.
 
-#////// Color and Themes
+####### Color and Themes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'     # use // colorscheme + name of scheme // for change scheme
@@ -102,7 +102,7 @@ Plug 'octol/vim-cpp-enhanced-highlight' # If you need modern C++ highlights, use
 call plug#end()                   # required
 filetype plugin indent on         # required
 
-#////// GUI Setting
+####### GUI Setting
 if has('gui_running')             # :help feature-list
     if (has('win32') || has('win64')) && has('gui_win32')
         au GUIEnter * simalt ~x   # start with a maximized window
@@ -114,28 +114,28 @@ if has('gui_running')             # :help feature-list
     endif
 endif
 
-#////// Ctrlp.vim Plugin
+####### Ctrlp.vim Plugin
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-#///// Exclude files or directories using Vim's wildignore
+### Exclude files or directories using Vim's wildignore
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     # Linux/MacOSX
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  # Windows
 
-#////// EasyMotion Setting
-#///// default is <Leader><Leader> or \\ keys
+####### EasyMotion Setting
+### default is <Leader><Leader> or \\ keys
 map <Leader> <Plug>(easymotion-prefix)
-#///// <Leader>f{char} to move to {char}
+### <Leader>f{char} to move to {char}
 map  <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
-#///// s{char}{char} to move to {char}{char}
+### s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-overwin-f2)
-#///// Move to line
+### Move to line
 map <Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader>L <Plug>(easymotion-overwin-line)
-#///// Move to word
+### Move to word
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
-#////// NERDTree Setting
+####### NERDTree Setting
 g:NERDTreeShowHidden = 1
 g:NERDTreeDirArrowExpandable = '■'
 g:NERDTreeDirArrowCollapsible = '□'
@@ -143,21 +143,21 @@ g:NERDTreeChDirMode = 2
 map <F3> :NERDTreeMirror<CR>
 map <F3> :NERDTreeToggle<CR>
 
-#///// Open a NERDTree automatically when vim starts up
+### Open a NERDTree automatically when vim starts up
 #autocmd vimenter * NERDTree
 
-#///// Open a NERDTree automatically when vim starts up if no files were specified
+### Open a NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in = 1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
-#///// Open NERDTree automatically when vim starts up on opening a directory
+### Open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in = 1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
-#///// Close vim if the only window left open is a NERDTree
+### Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
 
-#////// ALE
+####### ALE
 g:ale_sign_error = ''
 g:ale_sign_warning = ''
 g:airline#extensions#ale#enabled = 1    # Use Vim-Airline statusline with ALE.
@@ -167,13 +167,13 @@ g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│',
 g:ale_cpp_cc_executable = 'g++'
 g:ale_cpp_cc_options = '-std=c++23 -Wall -Werror -Wpedantic'
 
-#/////// vim-cpp-enhanced-highlight and vim-cpp-modern
+####### vim-cpp-enhanced-highlight and vim-cpp-modern
 g:cpp_member_highlight = 1        # Highlight struct/class member variables
 
-#////// Vim-fugitive
+####### Vim-fugitive
 set diffopt+=vertical
 
-#////// Vim-gitgutter
+####### Vim-gitgutter
 set updatetime=100
 g:gitgutter_max_signs = 500         # default value 500
 g:gitgutter_sign_added              = '+'
@@ -182,10 +182,10 @@ g:gitgutter_sign_removed            = '_'
 g:gitgutter_sign_removed_first_line = '‾'
 g:gitgutter_sign_modified_removed   = '~_'
 
-#////// flazz Vim-Colorschemes
+####### flazz Vim-Colorschemes
 colorscheme mimic # nord, tayra, fx, cake
 
-#////// Vim Airline Theme
+####### Vim Airline Theme
 set t_Co=256
 g:airline_theme = 'minimalist'      # simple, powerlineish, papercolor, minimalist, luna, deus
 g:airline#extensions#tabline#enabled = 1
@@ -202,7 +202,7 @@ if !exists('g:airline_symbols')
     g:airline_symbols = {}
 endif
 
-#////// unicode symbols
+####### Unicode symbols
 g:airline_left_sep = '»'
 g:airline_left_sep = '▶'
 g:airline_right_sep = '«'
@@ -219,7 +219,7 @@ g:airline_symbols.spell = '✓'
 g:airline_symbols.notexists = '✗'
 g:airline_symbols.whitespace = 'Ξ'
 
-#////// powerline symbols
+####### Powerline symbols
 g:airline_left_sep = ''
 g:airline_left_alt_sep = ''
 g:airline_right_sep = ''
