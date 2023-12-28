@@ -166,7 +166,7 @@ let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '�
 let g:ale_cpp_cc_executable = 'g++'
 let g:ale_cpp_cc_options = '-std=c++23 -Wall -Werror -Wpedantic'
 
-"/////// vim-cpp-enhanced-highlight and vim-cpp-modern
+"////// vim-cpp-enhanced-highlight and vim-cpp-modern
 let g:cpp_member_highlight = 1        " Highlight struct/class member variables
 
 "////// Vim-fugitive
@@ -201,7 +201,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-"////// unicode symbols
+"////// Unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
@@ -218,7 +218,7 @@ let g:airline_symbols.spell = '✓'
 let g:airline_symbols.notexists = '✗'
 let g:airline_symbols.whitespace = 'Ξ'
 
-"////// powerline symbols
+"////// Powerline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
