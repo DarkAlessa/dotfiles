@@ -143,8 +143,8 @@ g:NERDTreeChDirMode = 2
 map <F3> :NERDTreeMirror<CR>
 map <F3> :NERDTreeToggle<CR>
 
-### Open a NERDTree automatically when vim starts up
-#autocmd vimenter * NERDTree
+### Change working dir when vim starts up
+autocmd VimEnter * NERDTree C:\Users\nuker\Documents\DarkAlessa
 
 ### Open a NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in = 1
