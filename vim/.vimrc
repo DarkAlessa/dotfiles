@@ -102,8 +102,8 @@ call plug#end()                   " required
 filetype plugin indent on         " required
 
 "////// GUI Setting
-if has("gui_running")             " :help feature-list
-    if (has("win32") || has("win64")) && has("gui_win32")
+if has('gui_running')             " :help feature-list
+    if (has('win32') || has('win64')) && has('gui_win32')
         au GUIEnter * simalt ~x   " start with a maximized window
         set guioptions-=m         " disable Menu bar
         set guioptions-=T         " disable Tool bar
@@ -186,7 +186,7 @@ colorscheme mimic " nord, tayra, fx, cake
 
 "////// Vim Airline Theme
 set t_Co=256
-let g:airline_theme='minimalist'        "simple, powerlineish, papercolor, minimalist, luna, deus
+let g:airline_theme = 'minimalist'      "simple, powerlineish, papercolor, minimalist, luna, deus
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -195,7 +195,7 @@ let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
-let g:airline_section_z = airline#section#create(['%3p%% ', '\uE0A1' . ' %{line(".")}', '/%3L ', '\uE0A3' . ' %{col(".")}'])
+let g:airline_section_z = airline#section#create(['%3p%% ', "\uE0A1" . ' %{line(".")}', '/%3L ', "\uE0A3" . ' %{col(".")}'])
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
