@@ -105,10 +105,10 @@ filetype plugin indent on         " required
 if has("gui_running")             " :help feature-list
     if (has("win32") || has("win64")) && has("gui_win32")
         au GUIEnter * simalt ~x   " start with a maximized window
-        set guioptions -=m        " disable Menu bar
-        set guioptions -=T        " disable Tool bar
-        set guioptions -=r        " disable Right-hand scroll bar
-        set guioptions -=L        " disable Left-hand scroll bar
+        set guioptions-=m         " disable Menu bar
+        set guioptions-=T         " disable Tool bar
+        set guioptions-=r         " disable Right-hand scroll bar
+        set guioptions-=L         " disable Left-hand scroll bar
         set guifont=SauceCodePro\ NF:h9:W600:cANSI:qDRAFT
     endif
 endif
@@ -147,14 +147,14 @@ map <F3> :NERDTreeToggle<CR>
 
 "///// Open a NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in = 1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
 "///// Open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in = 1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 "///// Close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
 
 "////// ALE
 let g:ale_sign_error = ''
@@ -174,7 +174,7 @@ set diffopt+=vertical
 
 "////// Vim-gitgutter
 set updatetime=100
-let g:gitgutter_max_signs = 500         "default value 500
+let g:gitgutter_max_signs = 500         " default value 500
 let g:gitgutter_sign_added              = '+'
 let g:gitgutter_sign_modified           = '~'
 let g:gitgutter_sign_removed            = '_'
@@ -186,7 +186,7 @@ colorscheme mimic " nord, tayra, fx, cake
 
 "////// Vim Airline Theme
 set t_Co=256
-let g:airline_theme='minimalist' "simple, powerlineish, papercolor, minimalist, luna, deus
+let g:airline_theme='minimalist'        "simple, powerlineish, papercolor, minimalist, luna, deus
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -195,7 +195,7 @@ let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
-let g:airline_section_z = airline#section#create(['%3p%% ', "\uE0A1" . ' %{line(".")}', '/%3L ', "\uE0A3" . ' %{col(".")}'])
+let g:airline_section_z = airline#section#create(['%3p%% ', '\uE0A1' . ' %{line(".")}', '/%3L ', '\uE0A3' . ' %{col(".")}'])
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -229,3 +229,4 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ' :'
 let g:airline_symbols.maxlinenr = '☰ '
 let g:airline_symbols.dirty='⚡'
+
