@@ -195,7 +195,7 @@ let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
-let g:airline_section_z = airline#section#create(['%3p%% ', "\uE0A1" . ' %{line(".")}', '/%3L ', "\uE0A3" . ' %{col(".")}'])
+let g:airline_section_z = airline#section#create(['%3p%% ', "\uE0A1", ' %{line(".")}', '/%3L ', "\uE0A3", ' %{col(".")}'])
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
