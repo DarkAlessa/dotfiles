@@ -186,7 +186,7 @@ colorscheme mimic " nord, tayra, fx, cake
 
 "////// Vim Airline Theme
 set t_Co=256
-let g:airline_theme = 'minimalist'      "simple, powerlineish, papercolor, minimalist, luna, deus
+let g:airline_theme = 'minimalist'      " simple, powerlineish, papercolor, minimalist, luna, deus
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -228,5 +228,5 @@ let g:airline_symbols.colnr = ' :'
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ' :'
 let g:airline_symbols.maxlinenr = '☰ '
-let g:airline_symbols.dirty='⚡'
+let g:airline_symbols.dirty = '⚡'
 
