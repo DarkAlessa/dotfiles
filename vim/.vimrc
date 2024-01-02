@@ -248,20 +248,29 @@ g:airline_symbols.dirty = '⚡'
 def Compiler()
     var exename = system('ls *.exe')
     var menu: list<string> = [
-        'Build:   cmake -S . -B ./build -G "MSYS Makefiles"',
-        'Compile: cmake --build ./build',
-        'Run'
+        'GNU Build   │ g++ -std=c++23 -Wall -Werror -Wpedantic *.cpp -o app      G, g ',
+        'CMake Setup │ cmake -S . -B ./build -G "MSYS Makefile"                  S, s ',
+        'CMake Build │ cmake --build ./build                                     C, c ',
+        'Meson Setup │ meson setup ./build                                       E, e ',
+        'Meson Build │ meson compile -C ./build                                  M, m ',
+        'Run         │                                                           R, r '
         ]
     popup_menu(menu, {
         #title: ' Compile options ',
         borderchars: ['─', '│', '─', '│', '╭', '╮', '╯', '╰'],
         filter: (id, key) => {
-            if key == 'B' || key == 'b'
+            if key == 'G' || key == 'g'
                 popup_close(id, 1)
-            elseif key == 'C' || key == 'c'
+            elseif key == 'S' || key == 's'
                 popup_close(id, 2)
-            elseif key == 'R' || key == 'r'
+            elseif key == 'C' || key == 'c'
                 popup_close(id, 3)
+            elseif key == 'E' || key == 'e'
+                popup_close(id, 4)
+            elseif key == 'M' || key == 'm'
+                popup_close(id, 5)
+            elseif key == 'R' || key == 'r'
+                popup_close(id, 6)
             else
                 return popup_filter_menu(id, key)
             endif
@@ -269,11 +278,17 @@ def Compiler()
         },
        callback: (_, result) => {
            if result == 1
-               :!clear && cmake -S . -B ./build -G "MSYS Makefiles"
+               :!clear && g++ -std=c++23 -Wall -Werror -Wpedantic *.cpp -o app
            elseif result == 2
-               :!clear && cmake --build ./build
+               :!clear && cmake -S . -B ./build -G "MSYS Makefile"
            elseif result == 3
-               :execute ":!" exename
+               :!clear && cmake --build ./build
+           elseif result == 4
+               :!clear && meson setup ./build
+           elseif result == 5
+               :!clear && meson compile -C ./build
+           elseif result == 6
+               :execute ':!' exename
            endif
        },
     })
