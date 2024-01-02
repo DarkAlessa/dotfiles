@@ -246,7 +246,7 @@ g:airline_symbols.dirty = '⚡'
 
 ###### Compiler popup menu
 def Compiler()
-    var exename = system('ls *.exe')
+    var exefile = system('ls *.exe')
     var menu: list<string> = [
         'GNU Build   │ g++ -std=c++23 -Wall -Werror -Wpedantic *.cpp -o app      G, g ',
         'CMake Setup │ cmake -S . -B ./build -G "MSYS Makefile"                  S, s ',
@@ -276,21 +276,21 @@ def Compiler()
             endif
             return true
         },
-       callback: (_, result) => {
-           if result == 1
-               :!clear && g++ -std=c++23 -Wall -Werror -Wpedantic *.cpp -o app
-           elseif result == 2
-               :!clear && cmake -S . -B ./build -G "MSYS Makefile"
-           elseif result == 3
-               :!clear && cmake --build ./build
-           elseif result == 4
-               :!clear && meson setup ./build
-           elseif result == 5
-               :!clear && meson compile -C ./build
-           elseif result == 6
-               :execute ':!' exename
-           endif
-       },
+        callback: (_, result) => {
+            if result == 1
+                :!clear && g++ -std=c++23 -Wall -Werror -Wpedantic *.cpp -o app
+            elseif result == 2
+                :!clear && cmake -S . -B ./build -G "MSYS Makefile"
+            elseif result == 3
+                :!clear && cmake --build ./build
+            elseif result == 4
+                :!clear && meson setup ./build
+            elseif result == 5
+                :!clear && meson compile -C ./build
+            elseif result == 6
+                :execute ':!' exefile
+            endif
+        },
     })
 enddef
 nnoremap <Leader>c <ScriptCmd>Compiler()<CR>
