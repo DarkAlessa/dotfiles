@@ -253,6 +253,8 @@ def Compiler()
         'Run'
         ]
     popup_menu(menu, {
+        #title: ' Compile options ',
+        borderchars: ['─', '│', '─', '│', '╭', '╮', '╯', '╰'],
         filter: (id, key) => {
             if key == 'B' || key == 'b'
                 popup_close(id, 1)
