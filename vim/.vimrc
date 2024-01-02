@@ -52,8 +52,6 @@ g:termdebug_popup = 0
 ####### Key mapping
 imap jj <Esc>
 nmap <F8> :TagbarToggle<CR>
-nnoremap <Leader>c :!clear && g++ -std=c++23 -Wall -Werror -Wpedantic *.cpp -o app && app.exe <CR>
-nnoremap <Leader>b :!clear && cmake --build ./build <CR>
 
 ####### Move the line
 nnoremap <A-j> :m .+1<CR>==
@@ -172,7 +170,6 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 ### Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
-
 ####### ALE
 g:ale_sign_error = ''
 g:ale_sign_warning = ''
@@ -184,14 +181,14 @@ g:ale_cpp_cc_executable = 'g++'
 g:ale_cpp_cc_options = '-std=c++23 -Wall -Werror -Wpedantic'
 
 ####### vim-cpp-enhanced-highlight and vim-cpp-modern
-g:cpp_member_highlight = 1        # Highlight struct/class member variables
+g:cpp_member_highlight = 1              # Highlight struct/class member variables
 
 ####### Vim-fugitive
 set diffopt+=vertical
 
 ####### Vim-gitgutter
 set updatetime=100
-g:gitgutter_max_signs = 500         # default value 500
+g:gitgutter_max_signs = 500             # default value 500
 g:gitgutter_sign_added              = '+'
 g:gitgutter_sign_modified           = '~'
 g:gitgutter_sign_removed            = '_'
@@ -203,7 +200,7 @@ colorscheme mimic # nord, tayra, fx, cake
 
 ####### Vim Airline Theme
 set t_Co=256
-g:airline_theme = 'minimalist'      # simple, powerlineish, papercolor, minimalist, luna, deus
+g:airline_theme = 'minimalist'          # simple, powerlineish, papercolor, minimalist, luna, deus
 g:airline#extensions#tabline#enabled = 1
 g:airline#extensions#branch#enabled = 1
 g:airline#extensions#tabline#enabled = 1
@@ -247,3 +244,36 @@ g:airline_symbols.linenr = ' :'
 g:airline_symbols.maxlinenr = '☰ '
 g:airline_symbols.dirty = '⚡'
 
+###### Compiler popup menu
+def Compiler()
+    var exename = system('ls *.exe')
+    var menu: list<string> = [
+        'Build:   cmake -S . -B ./build -G "MSYS Makefiles"',
+        'Compile: cmake --build ./build',
+        'Run'
+        ]
+    popup_menu(menu, {
+        filter: (id, key) => {
+            if key == 'B' || key == 'b'
+                popup_close(id, 1)
+            elseif key == 'C' || key == 'c'
+                popup_close(id, 2)
+            elseif key == 'R' || key == 'r'
+                popup_close(id, 3)
+            else
+                return popup_filter_menu(id, key)
+            endif
+            return true
+        },
+       callback: (_, result) => {
+           if result == 1
+               :!clear && cmake -S . -B ./build -G "MSYS Makefiles"
+           elseif result == 2
+               :!clear && cmake --build ./build
+           elseif result == 3
+               :execute ":!" exename
+           endif
+       },
+    })
+enddef
+nnoremap <Leader>c <ScriptCmd>Compiler()<CR>
