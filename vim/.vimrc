@@ -249,7 +249,7 @@ def Run()
     var p1 = system('dir /b *.exe')
     var p2 = system('dir /b .\build\*.exe')
 
-    if  p1 == system('dir /b abc.xyz') && p2 == system('dir /b abc.xyz')
+    if p1 == p2
        echo 'File not found'
     elseif p1 == system('dir /b abc.xyz')
         :execute ':!.\build\' .. p2
