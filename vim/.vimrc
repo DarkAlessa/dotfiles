@@ -245,6 +245,19 @@ g:airline_symbols.maxlinenr = '☰ '
 g:airline_symbols.dirty = '⚡'
 
 ###### Compiler popup menu
+def Run()
+    var p1 = system('dir /b *.exe')[0 : 13]
+    var p2 = system('dir /b .\build\*.exe')[0 : 13]
+
+    if  p1 == 'File Not Found' && p2 == 'File Not Found'
+       echo 'File not found'
+    elseif p1 == 'File Not Found'
+        :execute ':!.\build\' .. p2
+    else
+        :execute ':!' .. p1
+    endif
+enddef
+
 def Compiler()
     var exefile = system('ls *.exe')
     var menu: list<string> = [
@@ -288,7 +301,7 @@ def Compiler()
             elseif result == 5
                 :!clear && meson compile -C ./build
             elseif result == 6
-                :execute ':!' exefile
+                Run()
             endif
         },
     })
