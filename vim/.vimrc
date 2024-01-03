@@ -209,7 +209,7 @@ g:airline_skip_empty_sections = 1
 g:airline#extensions#tabline#left_sep = ' '
 g:airline#extensions#tabline#left_alt_sep = '|'
 g:airline_powerline_fonts = 1
-g:airline_section_z = airline#section#create(['%3p%% ', "\uE0A1", ' %{line(".")}', '/%3L ', "\uE0A3", ' %{col(".")}'])
+g:airline_section_z = airline#section#create(['%3p%% ', "\uE0A1" .. ' %{line(".")}' .. '/%3L ' .. "\uE0A3" .. ' %{col(".")}'])
 
 if !exists('g:airline_symbols')
     g:airline_symbols = {}
@@ -248,7 +248,6 @@ g:airline_symbols.dirty = '⚡'
 def Run()
     var p1 = system('dir /b *.exe')
     var p2 = system('dir /b .\build\*.exe')
-
     if p1 == p2
        echo 'File not found'
     elseif p1 == system('dir /b abc.xyz')
