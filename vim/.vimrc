@@ -292,7 +292,7 @@ def Compiler()
             if result == 1
                 :!clear && g++ -std=c++23 -Wall -Werror -Wpedantic *.cpp -o app
             elseif result == 2
-                :!clear && cmake -S . -B ./build -G "MSYS Makefile"
+                :!clear && cmake -S . -B ./build -G "MSYS Makefiles"
             elseif result == 3
                 :!clear && cmake --build ./build
             elseif result == 4
