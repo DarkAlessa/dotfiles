@@ -261,7 +261,7 @@ def Compiler()
     var exefile = system('ls *.exe')
     var menu: list<string> = [
         'GNU Build   │ g++ -std=c++23 -Wall -Werror -Wpedantic *.cpp -o app      G, g ',
-        'CMake Setup │ cmake -S . -B ./build -G "MSYS Makefile"                  S, s ',
+        'CMake Setup │ cmake -S . -B ./build -G "MSYS Makefiles"                 S, s ',
         'CMake Build │ cmake --build ./build                                     C, c ',
         'Meson Setup │ meson setup ./build                                       E, e ',
         'Meson Build │ meson compile -C ./build                                  M, m ',
