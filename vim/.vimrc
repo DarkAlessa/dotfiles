@@ -290,15 +290,15 @@ def Compiler()
         },
         callback: (_, result) => {
             if result == 1
-                :!clear && g++ -std=c++23 -Wall -Werror -Wpedantic *.cpp -o app
+                :!cls && g++ -std=c++23 -Wall -Werror -Wpedantic *.cpp -o app
             elseif result == 2
-                :!clear && cmake -S . -B ./build -G "MSYS Makefiles"
+                :!cls && cmake -S . -B ./build -G "MSYS Makefiles"
             elseif result == 3
-                :!clear && cmake --build ./build
+                :!cls && cmake --build ./build
             elseif result == 4
-                :!clear && meson setup ./build
+                :!cls && meson setup ./build
             elseif result == 5
-                :!clear && meson compile -C ./build
+                :!cls && meson compile -C ./build
             elseif result == 6
                 Run()
             endif
