@@ -19,7 +19,6 @@ set showcmd                     # Show (partial) command in status line.
 set showmode
 set autoread                    # Set to auto read when a file is changed from the outside
 set autowrite                   # Automatically save before commands like :next and :make
-set autoindent                  # Auto-indent new lines
 set hidden                      # Hide buffers when they are abandoned
 set mouse=a                     # Enable mouse usage (all modes)
 set showmatch                   # Highlight matching brace
@@ -28,7 +27,9 @@ set hlsearch                    # Highlight all search results
 set smartcase                   # Enable smart-case search
 set ignorecase                  # Always case-insensitive
 set incsearch                   # Searches for strings incrementally
+set autoindent                  # Enable autoindent
 set smartindent                 # Enable smart-indent
+set cindent                     # Enable cindent (for C/C++)
 set smarttab                    # Enable smart-tabs
 set shiftwidth=4                # Number of auto-indent spaces
 set softtabstop=4               # Number of spaces per Tab
