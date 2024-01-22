@@ -179,7 +179,7 @@ g:ale_completion_enabled = 1            # Enable completion
 g:ale_virtualtext_cursor = 'current'
 g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│', '─']
 g:ale_cpp_cc_executable = 'g++'
-g:ale_cpp_cc_options = '-std=c++23 -Wall -Werror -Wpedantic'
+g:ale_cpp_cc_options = '-Iinclude -std=c++23 -Wall -Werror -Wpedantic'
 
 ####### vim-cpp-enhanced-highlight and vim-cpp-modern
 g:cpp_member_highlight = 1              # Highlight struct/class member variables
