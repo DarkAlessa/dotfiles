@@ -270,8 +270,8 @@ def Compiler()
         'GNU Build   │ g++ -std=c++23 -Wall -Werror -Wpedantic *.cpp -o app      G, g ',
         'CMake Setup │ cmake -S . -B ./build -G "MSYS Makefiles"                 S, s ',
         'CMake Build │ cmake --build ./build                                     C, c ',
-        'Meson Setup │ meson setup ./build                                       E, e ',
-        'Meson Build │ meson compile -C ./build                                  M, m ',
+        'Meson Setup │ meson setup ./builddir                                    E, e ',
+        'Meson Build │ meson compile -C ./builddir                               M, m ',
         'Run         │                                                           R, r '
         ]
     popup_menu(menu, {
@@ -303,9 +303,9 @@ def Compiler()
             elseif result == 3
                 :!cls && cmake --build ./build
             elseif result == 4
-                :!cls && meson setup ./build
+                :!cls && meson setup ./builddir
             elseif result == 5
-                :!cls && meson compile -C ./build
+                :!cls && meson compile -C ./builddir
             elseif result == 6
                 Run()
             endif
