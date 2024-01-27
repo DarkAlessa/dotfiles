@@ -247,14 +247,20 @@ g:airline_symbols.dirty = '⚡'
 
 ###### Compiler popup menu
 def Run()
-    var p1 = system('dir /b *.exe')
-    var p2 = system('dir /b .\build\*.exe')
-    if p1 == p2
-       echo 'File not found'
-    elseif p1 == system('dir /b abc.xyz')
-        :execute ':!.\build\' .. p2
+    if isdirectory('./builddir/')
+        if system('dir /b .\builddir\*.exe') != system('dir /b abc.xyz')
+            :execute ':!.\builddir\' .. system('dir /b .\builddir\*.exe')
+        endif
+    endif
+    if isdirectory('./build/')
+        if system('dir /b .\build\*.exe') != system('dir /b abc.xyz')
+            :execute ':!.\build\' .. system('dir /b .\build\*.exe')
+        endif
+    endif
+    if system('dir /b *.exe') != system('dir /b abc.xyz')
+        :execute ':!' .. system('dir /b *.exe')
     else
-        :execute ':!' .. p1
+        echo './ : File Not Found'
     endif
 enddef
 
