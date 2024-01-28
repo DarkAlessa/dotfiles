@@ -247,20 +247,14 @@ g:airline_symbols.dirty = '⚡'
 
 ###### Compiler popup menu
 def Run()
-    if isdirectory('./builddir/')
-        if system('dir /b .\builddir\*.exe') != system('dir /b abc.xyz')
-            :execute ':!.\builddir\' .. system('dir /b .\builddir\*.exe')
-        endif
-    endif
-    if isdirectory('./build/')
-        if system('dir /b .\build\*.exe') != system('dir /b abc.xyz')
-            :execute ':!.\build\' .. system('dir /b .\build\*.exe')
-        endif
-    endif
-    if system('dir /b *.exe') != system('dir /b abc.xyz')
-        :execute ':!' .. system('dir /b *.exe')
+    if isdirectory('./build') && system('dir /b .\build\*.exe') != system('dir /b abc.xyz')
+        :execute ':!.\build\' .. system('dir /b .\build\*.exe')
+    elseif isdirectory('./builddir') && system('dir /b .\builddir\*.exe') != system('dir /b abc.xyz')
+        :execute ':!.\builddir\' .. system('dir /b .\builddir\*.exe')
+    elseif system('dir /b *.exe') != system('dir /b abc.xyz')
+        :execute ':!.\' .. system('dir /b *.exe')
     else
-        echo './ : File Not Found'
+        echo "File Not Found"
     endif
 enddef
 
