@@ -78,3 +78,8 @@ alias ll='ls -la --color=auto'
 # cmake command alias
 alias cb='clear && cmake --build ./build'
 alias crb='clear && cmake -S . -B ./build -G "MSYS Makefiles"'
+
+# meson command alias
+alias mb='meson compile -C ./builddir'
+alias mbr='meson compile -C ./builddir && ./builddir/*.exe'
+alias mrb='meson setup ./builddir'
