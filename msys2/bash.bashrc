@@ -80,6 +80,6 @@ alias cb='clear && cmake --build ./build'
 alias crb='clear && cmake -S . -B ./build -G "MSYS Makefiles"'
 
 # meson command alias
-alias mb='meson compile -C ./builddir'
-alias mbr='meson compile -C ./builddir && ./builddir/*.exe'
-alias mrb='meson setup ./builddir'
+alias mb='clear && meson compile -C ./builddir'
+alias mbr='clear && meson compile -C ./builddir && ./builddir/*.exe'
+alias mrb='clear && eson setup ./builddir'
