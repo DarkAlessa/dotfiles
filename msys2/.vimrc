@@ -1,6 +1,6 @@
 " Maintainer: Dark Alessa
 
-set nocompatible                " Disable Vi compatibility 
+set nocompatible                " Disable Vi compatibility
 filetype on                     " Filetype must be 'on' before setting it 'off'
                                 " otherwise it exits with a bad status and breaks
                                 " git commit.
@@ -59,7 +59,7 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
 "////// Vim-plug
-call plug#begin() 
+call plug#begin()
 
 Plug 'w0rp/ale'                   " Check syntax in Vim with Language Server Protocol (LSP)
 Plug 'jiangmiao/auto-pairs'       " Insert or delete brackets, parens, quotes in pair.
@@ -132,7 +132,7 @@ hi Character         guifg=#B8BF73 guibg=bg gui=NONE ctermfg=141 ctermbg=NONE ct
 hi Number            guifg=#d787ff guibg=bg gui=NONE ctermfg=177 ctermbg=NONE cterm=NONE
 hi Boolean           guifg=#d787ff guibg=bg gui=NONE ctermfg=098 ctermbg=NONE cterm=NONE
 hi Float             guifg=#d787ff guibg=bg gui=NONE ctermfg=116 ctermbg=NONE cterm=NONE
-" Group 3 Indentifier 
+" Group 3 Indentifier
 hi Identifier        guifg=#ff8477 guibg=bg gui=NONE ctermfg=173 ctermbg=NONE cterm=NONE
 hi Function          guifg=#dcf06a guibg=bg gui=NONE ctermfg=107 ctermbg=NONE cterm=NONE
 " Group 4 Statement

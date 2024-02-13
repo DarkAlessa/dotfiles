@@ -1,7 +1,7 @@
 vim9script
 # Maintainer: Dark Alessa
 
-set nocompatible                # Disable Vi compatibility 
+set nocompatible                # Disable Vi compatibility
 filetype on                     # Filetype must be 'on' before setting it 'off'
                                 # otherwise it exits with a bad status and breaks
                                 # git commit.
