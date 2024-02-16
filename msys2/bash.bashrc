@@ -60,10 +60,10 @@ unset _warning
 # if we have the "High Mandatory Level" group, it means we're elevated
 if [[ -n "$(command -v getent)" ]] && id -G | grep -q "$(getent -w group 'S-1-16-12288' | cut -d: -f2)"
   then _ps1_symbol='\[\e[1m\]\#\[\e[0m\]'
-  else _ps1_symbol='\[\e[38;2;251;126;20;48;2;20;20;20m\]\$\[\e[0m\]'
+  else _ps1_symbol='\[\e[38;2;251;126;20;48;2;24;24;24m\]\$\[\e[0m\]'
 fi
 [[ $(declare -p PS1 2>/dev/null | cut -c 1-11) = 'declare -x ' ]] || \
-  export PS1='\[\e[38;2;251;126;20m\]\[\e[0m\]\[\e[38;2;20;20;20;48;2;251;126;20m\] \[\e[0m\]\[\e[38;2;251;126;20;48;2;20;20;20m\]\[\e[0m\]\[\e[0m\]\[\e[38;2;251;126;20;48;2;20;20;20m\] \W \[\e[0m\]\[\e[0m\]\[\e[38;2;44;240;41;48;2;20;20;20m\]$(__git_ps1 " %s ")\[\e[0m\]'"${_ps1_symbol}"'\[\e[38;2;20;20;20m\]\[\e[0m\] '
+  export PS1='\[\e[38;2;251;126;20m\]\[\e[0m\]\[\e[38;2;24;24;24;48;2;251;126;20m\] \[\e[0m\]\[\e[38;2;251;126;20;48;2;24;24;24m\]\[\e[0m\]\[\e[0m\]\[\e[38;2;251;126;20;48;2;24;24;24m\] \W \[\e[0m\]\[\e[0m\]\[\e[38;2;44;240;41;48;2;24;24;24m\]$(__git_ps1 " %s ")\[\e[0m\]'"${_ps1_symbol}"'\[\e[38;2;24;24;24m\]\[\e[0m\] '
 unset _ps1_symbol
 
 # Uncomment to use the terminal colours set in DIR_COLORS
