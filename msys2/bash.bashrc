@@ -86,3 +86,6 @@ alias mrb='clear && meson setup ./builddir'
 
 # Helix
 alias hx='helix'
+
+# c++ compiler
+alias run='g++ -std=c++23 -Wall -Werror -Wpedantic *.cpp -o app && ./app.exe'
