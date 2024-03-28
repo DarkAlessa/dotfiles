@@ -245,6 +245,13 @@ g:airline_symbols.linenr = ' :'
 g:airline_symbols.maxlinenr = '☰ '
 g:airline_symbols.dirty = '⚡'
 
+###### Save fold
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave *.* mkview
+  autocmd BufWinEnter *.* silent! loadview
+augroup END
+
 ###### Compiler popup menu
 def Run()
     if isdirectory('./build') && system('dir /b .\build\*.exe') != system('dir /b abc.xyz')
