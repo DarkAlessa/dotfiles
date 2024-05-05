@@ -54,7 +54,7 @@ g:termdebug_popup = 0
 imap jj <Esc>
 nmap <F8> :TagbarToggle<CR>
 
-####### Mov the line
+####### Move the line
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <ESC> :m .+1<CR>==gi
@@ -314,4 +314,3 @@ def Compiler()
     })
 enddef
 nnoremap <Leader>c <ScriptCmd>Compiler()<CR>
-
