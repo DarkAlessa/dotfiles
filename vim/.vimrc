@@ -54,7 +54,7 @@ g:termdebug_popup = 0
 imap jj <Esc>
 nmap <F8> :TagbarToggle<CR>
 
-####### Move the line
+####### Mov the line
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <ESC> :m .+1<CR>==gi
@@ -261,7 +261,7 @@ def Run()
     elseif system('dir /b *.exe') != system('dir /b abc.xyz')
         :execute ':!.\' .. system('dir /b *.exe')
     else
-        echo "File Not Found"
+        echo "File not found!"
     endif
 enddef
 
@@ -314,3 +314,4 @@ def Compiler()
     })
 enddef
 nnoremap <Leader>c <ScriptCmd>Compiler()<CR>
+

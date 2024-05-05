@@ -24,7 +24,7 @@ let g:colors_name = 'mimic'
 hi Normal            guifg=#c0d8d0 guibg=#212121 gui=NONE ctermfg=252  ctermbg=236  cterm=NONE
 
 hi Terminal          guifg=fg      guibg=bg      gui=NONE ctermfg=252  ctermbg=236  cterm=NONE
-hi Directory         guifg=#FFA000 guibg=bg      gui=NONE ctermfg=150  ctermbg=236  cterm=bold
+hi Directory         guifg=#D5EA48 guibg=bg      gui=NONE ctermfg=150  ctermbg=236  cterm=NONE
 hi Question          guifg=#c98de6 guibg=bg      gui=NONE ctermfg=102  ctermbg=NONE cterm=NONE
 hi Title             guifg=#00af87 guibg=bg      gui=NONE ctermfg=036  ctermbg=236  cterm=NONE
 hi WildMenu          guifg=#121212 guibg=#87d7af gui=NONE ctermfg=233  ctermbg=115  cterm=NONE
@@ -34,7 +34,7 @@ hi Conceal           guifg=#b5b5b5 guibg=#474747 gui=NONE ctermfg=007  ctermbg=0
 hi MatchParen        guifg=#87afd7 guibg=#585858 gui=NONE ctermfg=110  ctermbg=240  cterm=NONE
 hi NonText           guifg=bg      guibg=bg      gui=NONE ctermfg=240  ctermbg=NONE cterm=NONE
 hi ToolbarLine       guifg=NONE    guibg=#808080 gui=NONE ctermfg=NONE ctermbg=008  cterm=NONE
-hi ToolbarButton     guifg=#000000 guibg=#b5b5b5 gui=NONE ctermfg=000  ctermbg=007  cterm=bold
+hi ToolbarButton     guifg=#000000 guibg=#b5b5b5 gui=NONE ctermfg=000  ctermbg=007  cterm=BOLD
 hi VertSplit         guifg=#262626 guibg=#262626 gui=NONE ctermfg=236  ctermbg=236  cterm=NONE
 hi SpecialKey        guifg=#444444 guibg=bg      gui=NONE ctermfg=238  ctermbg=NONE cterm=NONE
 hi Scrollbar         guifg=NONE    guibg=bg      gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
@@ -45,8 +45,8 @@ hi link EndOfBuffer  NonText
 hi Comment           guifg=#707070 guibg=bg gui=NONE ctermfg=242 ctermbg=NONE cterm=NONE
 " Group 2 Constant
 hi Constant          guifg=#E3AEFF guibg=bg gui=NONE ctermfg=179 ctermbg=NONE cterm=NONE
-hi String            guifg=#98C379 guibg=bg gui=NONE ctermfg=149 ctermbg=NONE cterm=NONE
-hi Character         guifg=#98C379 guibg=bg gui=NONE ctermfg=141 ctermbg=NONE cterm=NONE
+hi String            guifg=#A3D082 guibg=bg gui=NONE ctermfg=149 ctermbg=NONE cterm=NONE
+hi Character         guifg=#A3D082 guibg=bg gui=NONE ctermfg=141 ctermbg=NONE cterm=NONE
 hi Boolean           guifg=#ff8477 guibg=bg gui=NONE ctermfg=098 ctermbg=NONE cterm=NONE
 hi Number            guifg=#FEC24F guibg=bg gui=NONE ctermfg=177 ctermbg=NONE cterm=NONE
 hi Float             guifg=#FEC24F guibg=bg gui=NONE ctermfg=116 ctermbg=NONE cterm=NONE
@@ -115,7 +115,7 @@ hi TabLineFill       guifg=#dfdfaf guibg=#121212 gui=NONE ctermfg=187 ctermbg=23
 " Statusline -------------------------------------------------------------------------------------------
 hi StatusLine        guifg=#87d7af guibg=#121212 gui=NONE ctermfg=115 ctermbg=233 cterm=NONE
 hi StatusLineNC      guifg=#767676 guibg=#121212 gui=NONE ctermfg=243 ctermbg=233 cterm=NONE
-hi StatusLineTerm    guifg=bg      guibg=#87ff5f gui=bold ctermfg=000 ctermbg=010 cterm=bold
+hi StatusLineTerm    guifg=bg      guibg=#87ff5f gui=BOLD ctermfg=000 ctermbg=010 cterm=BOLD
 hi StatusLineTermNC  guifg=bg      guibg=#87ff5f gui=NONE ctermfg=000 ctermbg=010 cterm=NONE
 
 " Diff -------------------------------------------------------------------------------------------------
@@ -147,8 +147,8 @@ hi PmenuSbar         guifg=NONE    guibg=#444444 gui=NONE ctermfg=NONE ctermbg=2
 hi PmenuThumb        guifg=NONE    guibg=#EE2F2F gui=NONE ctermfg=NONE ctermbg=167 cterm=NONE
 
 " Visual -----------------------------------------------------------------------------------------------
-hi Visual            guifg=fg      guibg=bg gui=reverse,bold ctermfg=007 ctermbg=237 cterm=NONE
-hi VisualNOS         guifg=fg      guibg=bg gui=reverse,bold ctermfg=007 ctermbg=237 cterm=NONE
+hi Visual            guifg=fg      guibg=bg gui=reverse,BOLD ctermfg=007 ctermbg=237 cterm=NONE
+hi VisualNOS         guifg=fg      guibg=bg gui=reverse,BOLD ctermfg=007 ctermbg=237 cterm=NONE
 
 " Quickfix ---------------------------------------------------------------------------------------------
 hi qfLineNr          guifg=#444444 guibg=NONE gui=NONE ctermfg=238 ctermbg=NONE cterm=NONE
