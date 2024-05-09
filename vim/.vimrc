@@ -44,7 +44,7 @@ set splitbelow                  # splitting a window will put the new window bel
 set sessionoptions+=resize,unix,slash
 set tags+=C:\msys64\home\nuker\tags # Ctags file / see ft-c-omni for help
 set omnifunc=syntaxcomplete#Complete
-#set shell=C:\Program\ Files\PowerShell\7\pwsh.exe
+set shell=powershell
 
 ####### Terminal Debugger
 g:termdebug_wide = 110
