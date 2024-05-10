@@ -44,7 +44,7 @@ set splitbelow                  # splitting a window will put the new window bel
 set sessionoptions+=resize,unix,slash
 set tags+=C:\msys64\home\nuker\tags # Ctags file / see ft-c-omni for help
 set omnifunc=syntaxcomplete#Complete
-#set shell=pwsh
+set shell=pwsh
 
 ####### Terminal Debugger
 g:termdebug_wide = 110
@@ -200,7 +200,11 @@ g:gitgutter_sign_modified_removed   = '~_'
 colorscheme mimic # nord, tayra, fx, cake
 
 ####### Vim Airline Theme
-set t_Co=256
+if exists('+termguicolors')
+    set termguicolors
+else
+    set t_Co=256
+endif
 g:airline_theme = 'minimalist'          # simple, powerlineish, papercolor, minimalist, luna, deus
 g:airline#extensions#tabline#enabled = 1
 g:airline#extensions#branch#enabled = 1
