@@ -44,7 +44,7 @@ set splitbelow                  # splitting a window will put the new window bel
 set sessionoptions+=resize,unix,slash
 set tags+=C:\msys64\home\nuker\tags # Ctags file / see ft-c-omni for help
 set omnifunc=syntaxcomplete#Complete
-set shell=pwsh
+#set shell=pwsh
 
 ####### Terminal Debugger
 g:termdebug_wide = 110
@@ -84,6 +84,7 @@ Plug 'majutsushi/tagbar'          # You must install the 'universal-ctags' packa
 Plug 'ctrlpvim/ctrlp.vim'         # Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 Plug 'rust-lang/rust.vim'         # syntax highlighting of Rust
 Plug 'mesonbuild/meson'           # meson build system
+Plug 'plasticboy/vim-markdown'    # markdown syntax highlighting.
 
 ####### fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
