@@ -84,7 +84,6 @@ Plug 'majutsushi/tagbar'          # You must install the 'universal-ctags' packa
 Plug 'ctrlpvim/ctrlp.vim'         # Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 Plug 'rust-lang/rust.vim'         # syntax highlighting of Rust
 Plug 'mesonbuild/meson'           # meson build system
-Plug 'plasticboy/vim-markdown'    # markdown syntax highlighting.
 
 ####### fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
