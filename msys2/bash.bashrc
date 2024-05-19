@@ -89,3 +89,6 @@ alias hx='helix'
 
 # c++ compiler
 alias run='g++ -std=c++23 -Wall -Werror -Wpedantic *.cpp -o app && ./app.exe'
+
+# fzf (Ctrl + t) for search file example $vim (Ctrl + t)
+eval "$(fzf --bash)"
