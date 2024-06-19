@@ -1,7 +1,7 @@
 "--------------------------
-" Name: mimic.vim
+" Name: emily.vim
 " Author: Dark Alessa
-" Last Updated: 21 Jul 2023
+" Last Updated: 19/06/2024
 " -------------------------
 
 set background=dark
@@ -21,13 +21,13 @@ let g:colors_name = 'mimic'
 " guibg   background color in the GUI
 "---------------------------------------------------
 
-hi Normal            guifg=#F7F9F2 guibg=#262626 gui=NONE ctermfg=252  ctermbg=236  cterm=NONE
+hi Normal            guifg=#d9d5d9 guibg=#404549 gui=NONE ctermfg=252  ctermbg=236  cterm=NONE
 
 hi Terminal          guifg=fg      guibg=bg      gui=NONE ctermfg=252  ctermbg=236  cterm=NONE
-hi Directory         guifg=#D3DFFF guibg=bg      gui=NONE ctermfg=150  ctermbg=236  cterm=NONE
+hi Directory         guifg=#BCCEF8 guibg=bg      gui=NONE ctermfg=150  ctermbg=236  cterm=NONE
 hi Question          guifg=#c98de6 guibg=bg      gui=NONE ctermfg=102  ctermbg=NONE cterm=NONE
-hi Title             guifg=#00af87 guibg=bg      gui=NONE ctermfg=036  ctermbg=236  cterm=NONE
-hi WildMenu          guifg=#121212 guibg=#87d7af gui=NONE ctermfg=233  ctermbg=115  cterm=NONE
+hi Title             guifg=#A1EEBD guibg=bg      gui=NONE ctermfg=036  ctermbg=236  cterm=NONE
+hi WildMenu          guifg=#121212 guibg=#A1EEBD gui=NONE ctermfg=233  ctermbg=115  cterm=NONE
 hi ColorColumn       guifg=NONE    guibg=bg      gui=NONE ctermfg=235  ctermbg=NONE cterm=NONE
 hi SignColumn        guifg=NONE    guibg=bg      gui=NONE ctermfg=237  ctermbg=NONE cterm=NONE
 hi Conceal           guifg=#b5b5b5 guibg=#474747 gui=NONE ctermfg=007  ctermbg=008  cterm=NONE
@@ -42,17 +42,17 @@ hi link EndOfBuffer  NonText
 
 " Syntax   [:help E669] --------------------------------------------------------------------------------
 " Group 1 Comment
-hi Comment           guifg=#707070 guibg=bg gui=NONE ctermfg=242 ctermbg=NONE cterm=NONE
+hi Comment           guifg=#b5b5b5 guibg=bg gui=NONE ctermfg=242 ctermbg=NONE cterm=NONE
 " Group 2 Constant
 hi Constant          guifg=#E3AEFF guibg=bg gui=NONE ctermfg=179 ctermbg=NONE cterm=NONE
-hi String            guifg=#A3D082 guibg=bg gui=NONE ctermfg=149 ctermbg=NONE cterm=NONE
-hi Character         guifg=#A3D082 guibg=bg gui=NONE ctermfg=141 ctermbg=NONE cterm=NONE
+hi String            guifg=#B3C890 guibg=bg gui=NONE ctermfg=149 ctermbg=NONE cterm=NONE
+hi Character         guifg=#B3C890 guibg=bg gui=NONE ctermfg=141 ctermbg=NONE cterm=NONE
 hi Boolean           guifg=#F0F975 guibg=bg gui=NONE ctermfg=098 ctermbg=NONE cterm=NONE
 hi Number            guifg=#F0F975 guibg=bg gui=NONE ctermfg=177 ctermbg=NONE cterm=NONE
 hi Float             guifg=#F0F975 guibg=bg gui=NONE ctermfg=116 ctermbg=NONE cterm=NONE
 " Group 3 Indentifier 
 hi Identifier        guifg=#FF8F80 guibg=bg gui=NONE ctermfg=173 ctermbg=NONE cterm=NONE
-hi Function          guifg=#A6DEFD guibg=bg gui=NONE ctermfg=107 ctermbg=NONE cterm=NONE
+hi Function          guifg=#8ACDD7 guibg=bg gui=NONE ctermfg=107 ctermbg=NONE cterm=NONE
 " Group 4 Statement
 hi Statement         guifg=#E3AEFF guibg=bg gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
 hi Conditional       guifg=#E3AEFF guibg=bg gui=NONE ctermfg=222 ctermbg=NONE cterm=NONE
@@ -62,7 +62,7 @@ hi Operator          guifg=fg      guibg=bg gui=NONE ctermfg=254 ctermbg=NONE ct
 hi Keyword           guifg=#FEC24F guibg=bg gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
 hi Exception         guifg=#FEC24F guibg=bg gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
 " Group 5 Pre-Processor
-hi PreProc           guifg=#60D0FD guibg=bg gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
+hi PreProc           guifg=#8ACDD7 guibg=bg gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
 hi Include           guifg=#E3AEFF guibg=bg gui=NONE ctermfg=140 ctermbg=NONE cterm=NONE
 hi Define            guifg=#FF8F80 guibg=bg gui=NONE ctermfg=222 ctermbg=NONE cterm=NONE
 hi Macro             guifg=#FF8F80 guibg=bg gui=NONE ctermfg=222 ctermbg=NONE cterm=NONE
@@ -85,11 +85,11 @@ hi Todo              guifg=#5f5faf guibg=bg gui=NONE ctermfg=061 ctermbg=236  ct
 hi Underlined        guifg=#c98de6 guibg=bg gui=underline ctermfg=192  ctermbg=NONE cterm=underline
 
 " Cursor -----------------------------------------------------------------------------------------------
-hi Cursor            guifg=#303030 guibg=#5FFF00 gui=NONE ctermfg=235  ctermbg=228  cterm=NONE
-hi CursorIM          guifg=#303030 guibg=#5FFF00 gui=NONE ctermfg=235  ctermbg=228  cterm=NONE
-hi CursorColumn      guifg=NONE    guibg=#303030 gui=NONE ctermfg=NONE ctermbg=235  cterm=NONE
-hi CursorLine        guifg=NONE    guibg=#303030 gui=NONE ctermfg=NONE ctermbg=235  cterm=NONE
-hi CursorLineNr      guifg=#00DFFF guibg=#303030 gui=NONE ctermfg=045  ctermbg=236  cterm=NONE
+hi Cursor            guifg=#595E62 guibg=#5FFF00 gui=NONE ctermfg=235  ctermbg=228  cterm=NONE
+hi CursorIM          guifg=#595E62 guibg=#5FFF00 gui=NONE ctermfg=235  ctermbg=228  cterm=NONE
+hi CursorColumn      guifg=NONE    guibg=#595E62 gui=NONE ctermfg=NONE ctermbg=235  cterm=NONE
+hi CursorLine        guifg=NONE    guibg=#595E62 gui=NONE ctermfg=NONE ctermbg=235  cterm=NONE
+hi CursorLineNr      guifg=#00DFFF guibg=#595E62 gui=NONE ctermfg=045  ctermbg=236  cterm=NONE
 hi lCursor           guifg=bg      guibg=fg      gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 hi link CursorLineSign SignColumn
 hi link CursorLineFold FoldColumn
