@@ -42,7 +42,7 @@ hi link EndOfBuffer  NonText
 
 " Syntax   [:help E669] --------------------------------------------------------------------------------
 " Group 1 Comment
-hi Comment           guifg=#707070 guibg=bg gui=ITALIC ctermfg=242 ctermbg=NONE cterm=ITALIC
+hi Comment           guifg=#575757 guibg=bg gui=ITALIC ctermfg=242 ctermbg=NONE cterm=ITALIC
 " Group 2 Constant
 hi Constant          guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=179 ctermbg=NONE cterm=NONE
 hi String            guifg=#A3D082 guibg=bg gui=NONE ctermfg=149 ctermbg=NONE cterm=NONE
@@ -52,7 +52,7 @@ hi Number            guifg=#80B9CB guibg=bg gui=NONE ctermfg=177 ctermbg=NONE ct
 hi Float             guifg=#80B9CB guibg=bg gui=NONE ctermfg=116 ctermbg=NONE cterm=NONE
 " Group 3 Indentifier 
 hi Identifier        guifg=#FF8F80 guibg=bg gui=NONE ctermfg=173 ctermbg=NONE cterm=NONE
-hi Function          guifg=#919191 guibg=bg gui=NONE ctermfg=107 ctermbg=NONE cterm=NONE
+hi Function          guifg=#969696 guibg=bg gui=NONE ctermfg=107 ctermbg=NONE cterm=NONE
 " Group 4 Statement
 hi Statement         guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
 hi Conditional       guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=222 ctermbg=NONE cterm=NONE
