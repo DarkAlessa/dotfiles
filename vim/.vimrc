@@ -197,7 +197,7 @@ g:gitgutter_sign_removed_first_line = '‾'
 g:gitgutter_sign_modified_removed   = '~_'
 
 ####### flazz Vim-Colorschemes
-colorscheme mimic # nord, tayra, fx, cake
+colorscheme mimic #emily, nord, tayra, fx, cake
 
 ####### Vim Airline Theme
 if exists('+termguicolors')
