@@ -21,10 +21,10 @@ let g:colors_name = 'mimic'
 " guibg   background color in the GUI
 "---------------------------------------------------
 
-hi Normal            guifg=#DBDBDB guibg=#202020 gui=NONE ctermfg=252  ctermbg=236  cterm=NONE
+hi Normal            guifg=#F0F0F0 guibg=#262626 gui=NONE ctermfg=252  ctermbg=236  cterm=NONE
 
 hi Terminal          guifg=fg      guibg=bg      gui=NONE ctermfg=252  ctermbg=236  cterm=NONE
-hi Directory         guifg=#80B9CB guibg=bg      gui=NONE ctermfg=150  ctermbg=236  cterm=NONE
+hi Directory         guifg=#899296 guibg=bg      gui=NONE ctermfg=150  ctermbg=236  cterm=NONE
 hi Question          guifg=#c98de6 guibg=bg      gui=NONE ctermfg=102  ctermbg=NONE cterm=NONE
 hi Title             guifg=#2DC9A6 guibg=bg      gui=NONE ctermfg=036  ctermbg=236  cterm=NONE
 hi WildMenu          guifg=#121212 guibg=#87d7af gui=NONE ctermfg=233  ctermbg=115  cterm=NONE
@@ -42,36 +42,36 @@ hi link EndOfBuffer  NonText
 
 " Syntax   [:help E669] --------------------------------------------------------------------------------
 " Group 1 Comment
-hi Comment           guifg=#575757 guibg=bg gui=ITALIC ctermfg=242 ctermbg=NONE cterm=ITALIC
+hi Comment           guifg=#6C6C6C guibg=bg gui=ITALIC ctermfg=242 ctermbg=NONE cterm=ITALIC
 " Group 2 Constant
-hi Constant          guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=179 ctermbg=NONE cterm=NONE
+hi Constant          guifg=#D09BEE guibg=bg gui=NONE ctermfg=179 ctermbg=NONE cterm=NONE
 hi String            guifg=#A3D082 guibg=bg gui=NONE ctermfg=149 ctermbg=NONE cterm=NONE
 hi Character         guifg=#A3D082 guibg=bg gui=NONE ctermfg=141 ctermbg=NONE cterm=NONE
-hi Boolean           guifg=#80B9CB guibg=bg gui=NONE ctermfg=098 ctermbg=NONE cterm=NONE
-hi Number            guifg=#80B9CB guibg=bg gui=NONE ctermfg=177 ctermbg=NONE cterm=NONE
-hi Float             guifg=#80B9CB guibg=bg gui=NONE ctermfg=116 ctermbg=NONE cterm=NONE
+hi Boolean           guifg=#7FE3B1 guibg=bg gui=NONE ctermfg=098 ctermbg=NONE cterm=NONE
+hi Number            guifg=#7FE3B1 guibg=bg gui=NONE ctermfg=177 ctermbg=NONE cterm=NONE
+hi Float             guifg=#7FE3B1 guibg=bg gui=NONE ctermfg=116 ctermbg=NONE cterm=NONE
 " Group 3 Indentifier 
 hi Identifier        guifg=#FF8F80 guibg=bg gui=NONE ctermfg=173 ctermbg=NONE cterm=NONE
-hi Function          guifg=#969696 guibg=bg gui=NONE ctermfg=107 ctermbg=NONE cterm=NONE
+hi Function          guifg=#6ABFDF guibg=bg gui=NONE ctermfg=107 ctermbg=NONE cterm=NONE
 " Group 4 Statement
-hi Statement         guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
-hi Conditional       guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=222 ctermbg=NONE cterm=NONE
-hi Repeat            guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=173 ctermbg=NONE cterm=NONE
-hi Label             guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=118 ctermbg=NONE cterm=NONE
+hi Statement         guifg=#D09BEE guibg=bg gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
+hi Conditional       guifg=#D09BEE guibg=bg gui=NONE ctermfg=222 ctermbg=NONE cterm=NONE
+hi Repeat            guifg=#D09BEE guibg=bg gui=NONE ctermfg=173 ctermbg=NONE cterm=NONE
+hi Label             guifg=#D09BEE guibg=bg gui=NONE ctermfg=118 ctermbg=NONE cterm=NONE
 hi Operator          guifg=fg      guibg=bg gui=NONE ctermfg=254 ctermbg=NONE cterm=NONE
-hi Keyword           guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
-hi Exception         guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
+hi Keyword           guifg=#D09BEE guibg=bg gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
+hi Exception         guifg=#D09BEE guibg=bg gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
 " Group 5 Pre-Processor
 hi PreProc           guifg=#60D0FD guibg=bg gui=NONE ctermfg=183 ctermbg=NONE cterm=NONE
-hi Include           guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=140 ctermbg=NONE cterm=NONE
+hi Include           guifg=#D09BEE guibg=bg gui=NONE ctermfg=140 ctermbg=NONE cterm=NONE
 hi Define            guifg=#FF8F80 guibg=bg gui=NONE ctermfg=222 ctermbg=NONE cterm=NONE
 hi Macro             guifg=#FF8F80 guibg=bg gui=NONE ctermfg=222 ctermbg=NONE cterm=NONE
 hi PreCondit         guifg=#FF8F80 guibg=bg gui=NONE ctermfg=173 ctermbg=NONE cterm=NONE
 " Group 6 Type
-hi Type              guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=081 ctermbg=NONE cterm=NONE
-hi StorageClass      guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=117 ctermbg=NONE cterm=NONE
-hi Structure         guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=117 ctermbg=NONE cterm=NONE
-hi Typedef           guifg=#DBA9F6 guibg=bg gui=NONE ctermfg=117 ctermbg=NONE cterm=NONE
+hi Type              guifg=#D09BEE guibg=bg gui=NONE ctermfg=081 ctermbg=NONE cterm=NONE
+hi StorageClass      guifg=#D09BEE guibg=bg gui=NONE ctermfg=117 ctermbg=NONE cterm=NONE
+hi Structure         guifg=#D09BEE guibg=bg gui=NONE ctermfg=117 ctermbg=NONE cterm=NONE
+hi Typedef           guifg=#D09BEE guibg=bg gui=NONE ctermfg=117 ctermbg=NONE cterm=NONE
 " Group 7 Special
 hi Special           guifg=#FF8F80 guibg=bg gui=NONE ctermfg=174 ctermbg=NONE cterm=NONE
 hi SpecialChar       guifg=#FF8F80 guibg=bg gui=NONE ctermfg=066 ctermbg=NONE cterm=NONE
